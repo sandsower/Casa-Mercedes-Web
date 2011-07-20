@@ -1,0 +1,1 @@
+<? $report_fields=Array(Array("field_name" => "id", "model" => "Albergado", "associated_table" => "", "display_name" => "ID", "priority" => "", "include" => "on"));$order_by="Albergado.id,Albergado.persona_id";$report_name="Ejemplo"; ?>

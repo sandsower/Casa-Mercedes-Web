@@ -3,12 +3,19 @@ class EstadosController extends AppController {
 
 	var $name = 'Estados';
 	
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
     }
 	
 	function index() {
+		$this->Estado->recursive = 0;
+		$this->set('estados', $this->paginate());
+		$this->set('municipios',$this->paginate());
+	}
+	
+	function prueba(){
 		$this->Estado->recursive = 0;
 		$this->set('estados', $this->paginate());
 	}
