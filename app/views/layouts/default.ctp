@@ -30,15 +30,10 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('css.index');
-		
-		
-		
+
 		echo $scripts_for_layout;
 	?>
-	
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-
-	
 </head>
 <body>
 	<div id="container">
