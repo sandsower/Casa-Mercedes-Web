@@ -39,15 +39,12 @@ $(document).ready(function(){
 	});
 	
 	jQuery('.estado').click(function(){
-		jQuery('#buscador').val(jQuery(this).html);
+		jQuery('#buscador').val(jQuery.trim(jQuery(this).html()));
+		jQuery('#idEstado').val(jQuery(this).parent('.idEstado').attr('name'));
 	});	
 });
 </script>
 <style type="text/css" media="screen">
-	.hover{
-		background-color:red;
-		color:black;
-	}
 	input{
 		border-color:gray;
 		width:200px;
@@ -59,11 +56,16 @@ $(document).ready(function(){
 		background-color:gray;
 		color:white;
 	}
+	div.hover{
+		background-color:red;
+		color:black;
+	}
 	.displayOff{
 		display:none;
 	}
 </style>
 <input type="text" name="estado" id="buscador" class="buscador">
+<input type="hidden" name="idEstado" id="idEstado"/>
 <img src="http://localhost/Casa-Mercedes-Web/img/arrow.png" class="buscador"/>
 <div id="Container">
 <?php
@@ -74,9 +76,10 @@ foreach ($estados as $estado):
 		$class = ' class="altrow"';
 	}
 ?>
-	<div class="estado" name="<?php echo $estado['Estado']['title']; ?>">
-		<input type="hidden" name="estadoValue" value="<?php echo $estado['Estado']['id']; ?>"/>
-		<?php echo $estado['Estado']['title']; ?>
+	<div name="<?php echo $estado['Estado']['id'] ?>" class="idEstado">
+		<div class="estado" name="<?php echo $estado['Estado']['title']; ?>">
+			<?php echo $estado['Estado']['title']; ?>
+		</div>
 	</div>
 
 <?endforeach;?>
