@@ -34,10 +34,12 @@ $(document).ready(function(){
 	});	
 	jQuery('div.estado').hover(function(){
 		jQuery(this).addClass('hover');
+	},function(){
+		jQuery(this).removeClass('hover');
 	});
 	
 	jQuery('.estado').click(function(){
-		jQuery('#buscador').val()='jQuery(this).html';
+		jQuery('#buscador').val(jQuery(this).html);
 	});	
 });
 </script>
